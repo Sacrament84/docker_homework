@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'unen%+=v7wr#d%&rz@u&1n)2h)128&j0y2w&bk73r=03h(+!df'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'lib_catalog.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django",
-        "USER": "django",
-        "PASSWORD": "django",
-        "HOST": "database",
+        "NAME": "backend",
+        "USER": "backend",
+        "PASSWORD": "backend",
+        "HOST": "pgsql",
         "PORT": "5432",
         "CONN_MAX_AGE": None
     },
@@ -137,6 +137,8 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
+    "http://10.10.30.30:8000",
+    "http://10.10.30.30",
 ]
 
 FIXTURES_DIRS = os.path.join(BASE_DIR, 'catalog/fixtures')
